@@ -8673,6 +8673,41 @@ $$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>En estándar de mercado, <strong>una correlación es baja cuando está entre $[-0.25, +0.25]$</strong></p>
+<hr/>
+<p>Además, este término es el que nos reduce la varianza de nuestro portafolio, la fórmula para calcular el riesgo de un portafolio es la siguiente:</p>
+<p>$$
+\sigma_p^2 = w^T \Sigma w
+$$</p>
+<p>Ahora bien, si la desarrollamos para dos términos:</p>
+<p>$$
+\sigma_p^2
+=
+w_x^2\sigma_x^2
++
+w_y^2\sigma_y^2
++
+2w_xw_y\rho_{xy}\operatorname{Cov}_{xy}
+$$</p>
+<p>Pero, si de la fórmula de la correlación despejamos la covarianza:</p>
+<p>$$
+\operatorname{Cov}_{xy}
+=
+\rho_{xy}\sigma_x\sigma_y
+$$</p>
+<p>Por lo tanto, el riesgo del portafolio nos queda como:</p>
+<p>$$
+\sigma_p^2
+=
+w_x^2\sigma_x^2
++
+w_y^2\sigma_y^2
++
+2w_xw_y\rho_{xy}\sigma_x\sigma_y
+$$</p>
+<p>Si nos fijamos, todos los términos son positivos, tanto los pesos $w_i$ (asumiendo que no hay ventas en corto), como las $\sigma^2_i$ y las $\sigma_i$. Por lo tanto, el único término que nos puede disminuir el riesgo es:</p>
+<p>$$
+\boxed{\rho_{xy}}
+$$</p>
 </div>
 </div>
 </div>
