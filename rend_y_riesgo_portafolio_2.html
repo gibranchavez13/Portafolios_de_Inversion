@@ -8558,8 +8558,9 @@ $$</p>
 \frac{\operatorname{Cov}_{xy}}
 {\sigma_x \sigma_y}
 $$</p>
-<p><code>.corr()</code> crea una matriz de correlación es simétrica es cuadrada.</p>
+<p><code>.corr()</code> crea una matriz de correlación, que es simétrica y cuadrada.</p>
 <p>Simétrica: La parte inferior de la diagonal es igual a la parte superior, por lo que una matriz de correlación es igual a su transpuesta.</p>
+<p>Cuadrada: $n$ filas y $n$ columnas.</p>
 </div>
 </div>
 </div>
@@ -8686,7 +8687,7 @@ w_x^2\sigma_x^2
 +
 w_y^2\sigma_y^2
 +
-2w_xw_y\rho_{xy}\operatorname{Cov}_{xy}
+2w_xw_y\operatorname{Cov}_{xy}
 $$</p>
 <p>Pero, si de la fórmula de la correlación despejamos la covarianza:</p>
 <p>$$
