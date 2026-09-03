@@ -7546,6 +7546,44 @@ a.anchor-link {
 <p>$$
 RS = \frac{R_p - r_f}{\sigma_p}
 $$</p>
+<p>Mientras <strong>mayor sea el Ratio de Sharpe, mejor es la relación rendimiento-riesgo</strong>.</p>
+<p>Como referencia general:</p>
+<table>
+<thead>
+<tr>
+<th>Ratio de Sharpe</th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$&lt; 0$</td>
+<td>Malo: el portafolio rindió menos que el activo libre de riesgo</td>
+</tr>
+<tr>
+<td>$0 - 1$</td>
+<td>Relación rendimiento-riesgo relativamente baja</td>
+</tr>
+<tr>
+<td>$1 - 2$</td>
+<td>Buena</td>
+</tr>
+<tr>
+<td>$2 - 3$</td>
+<td>Muy buena</td>
+</tr>
+<tr>
+<td>$&gt; 3$</td>
+<td>Excelente, aunque poco común de forma sostenida</td>
+</tr>
+</tbody>
+</table>
+<p>Lo importante es que <strong>no debe analizarse solamente el rendimiento</strong>. Por ejemplo, si tienes:</p>
+<ul>
+<li><strong>Portafolio A:</strong> rendimiento = $15\%$, volatilidad = $20\%$, Sharpe = $0.50$</li>
+<li><strong>Portafolio B:</strong> rendimiento = $12\%$, volatilidad = $8\%$, Sharpe = $0.88$</li>
+</ul>
+<p>Aunque <strong>A gana más, B administra mejor el riesgo</strong>, porque obtiene más rendimiento excedente por cada unidad de volatilidad asumida.</p>
 <p>Y la $\text{Aversión al Riesgo}$, que es una medida relativa que refleja la preferencia de un inversionista por estrategias con menor riesgo, priorizando la estabilidad sobre la posibilidad de obtener mayores rendimientos.</p>
 <p>Hay tres perfiles de riesgo:</p>
 <ul>
@@ -7589,7 +7627,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">yfinance</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">yf</span>
@@ -7616,7 +7654,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">active_tickers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'COHR'</span><span class="p">,</span> <span class="s1">'KO'</span><span class="p">,</span> <span class="s1">'SNOW'</span><span class="p">,</span> <span class="s1">'MRK'</span><span class="p">]</span>
@@ -7644,7 +7682,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">prices</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">tickers</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">'2010-01-01'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">'2026-09-01'</span><span class="p">)[</span><span class="s1">'Close'</span><span class="p">]</span>
@@ -7666,7 +7704,7 @@ $$</p>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7705,23 +7743,23 @@ $$</p>
 <tr>
 <th>2010-01-04</th>
 <td>16.080000</td>
-<td>17.205246</td>
-<td>20.314671</td>
+<td>17.205252</td>
+<td>20.314669</td>
 <td>NaN</td>
 <td>1132.989990</td>
 </tr>
 <tr>
 <th>2010-01-05</th>
 <td>16.285000</td>
-<td>16.997118</td>
-<td>20.397009</td>
+<td>16.997126</td>
+<td>20.397007</td>
 <td>NaN</td>
 <td>1136.520020</td>
 </tr>
 <tr>
 <th>2010-01-06</th>
 <td>16.385000</td>
-<td>16.991089</td>
+<td>16.991091</td>
 <td>20.671459</td>
 <td>NaN</td>
 <td>1137.140015</td>
@@ -7730,7 +7768,7 @@ $$</p>
 <th>2010-01-07</th>
 <td>15.740000</td>
 <td>16.948856</td>
-<td>20.704391</td>
+<td>20.704393</td>
 <td>NaN</td>
 <td>1141.689941</td>
 </tr>
@@ -7738,7 +7776,7 @@ $$</p>
 <th>2010-01-08</th>
 <td>15.675000</td>
 <td>16.635160</td>
-<td>20.693419</td>
+<td>20.693417</td>
 <td>NaN</td>
 <td>1144.979980</td>
 </tr>
@@ -7814,7 +7852,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">rets</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -7829,7 +7867,7 @@ $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -7893,15 +7931,15 @@ $$</p>
 <th>2020-09-22</th>
 <td>0.057892</td>
 <td>0.011612</td>
-<td>-0.002286</td>
+<td>-0.002285</td>
 <td>0.027573</td>
 <td>0.010518</td>
 </tr>
 <tr>
 <th>2020-09-23</th>
 <td>-0.052025</td>
-<td>-0.029199</td>
-<td>-0.003737</td>
+<td>-0.029198</td>
+<td>-0.003738</td>
 <td>-0.075566</td>
 <td>-0.023721</td>
 </tr>
@@ -7977,7 +8015,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">rf</span> <span class="o">=</span> <span class="mf">0.04</span> <span class="c1"># Bonos de EUA</span>
@@ -8002,7 +8040,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">rets_passive</span> <span class="o">=</span> <span class="n">rets</span><span class="p">[</span><span class="n">passive_tickers</span><span class="p">]</span>
@@ -8017,7 +8055,7 @@ $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8113,7 +8151,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">E_R_passive</span> <span class="o">=</span> <span class="n">rets_passive</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
@@ -8128,7 +8166,7 @@ $$</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Ticker
 ^GSPC    0.152006
@@ -8153,7 +8191,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">S_D_passive</span> <span class="o">=</span> <span class="n">rets_passive</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
@@ -8168,7 +8206,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Ticker
 ^GSPC    0.166016
@@ -8193,7 +8231,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">Sharpe_Ratio_passive</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_R_passive</span> <span class="o">-</span> <span class="n">rf</span><span class="p">)</span> <span class="o">/</span> <span class="n">S_D_passive</span>  <span class="c1"># Benchmark</span>
@@ -8208,7 +8246,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Ticker
 ^GSPC    0.67467
@@ -8248,7 +8286,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span>  <span class="c1"># Pesos iguales para las 4 acciones</span>
@@ -8262,7 +8300,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">rets_active</span> <span class="o">=</span> <span class="n">rets</span><span class="p">[</span><span class="n">active_tickers</span><span class="p">]</span>
@@ -8277,7 +8315,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8337,14 +8375,14 @@ dtype: float64</pre>
 <td>0.057892</td>
 <td>0.011612</td>
 <td>0.027573</td>
-<td>-0.002286</td>
+<td>-0.002285</td>
 </tr>
 <tr>
 <th>2020-09-23</th>
 <td>-0.052025</td>
-<td>-0.029199</td>
+<td>-0.029198</td>
 <td>-0.075566</td>
-<td>-0.003737</td>
+<td>-0.003738</td>
 </tr>
 <tr>
 <th>...</th>
@@ -8412,7 +8450,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">means_active</span> <span class="o">=</span> <span class="n">rets_active</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
@@ -8428,9 +8466,9 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>np.float64(0.26454336809395423)</pre>
+<pre>np.float64(0.26454335414888175)</pre>
 </div>
 </div>
 </div>
@@ -8451,7 +8489,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">cov_matrix_active</span> <span class="o">=</span> <span class="n">rets_active</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
@@ -8466,7 +8504,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
@@ -8540,7 +8578,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">vol_R_active</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">cov_matrix_active</span> <span class="o">@</span> <span class="n">weights</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">252</span><span class="p">)</span>
@@ -8555,9 +8593,9 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>np.float64(0.2587503927197317)</pre>
+<pre>np.float64(0.2587503844756821)</pre>
 </div>
 </div>
 </div>
@@ -8578,7 +8616,7 @@ dtype: float64</pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">Sharpe_Ratio_active</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_R_active</span> <span class="o">-</span> <span class="n">rf</span><span class="p">)</span> <span class="o">/</span> <span class="n">vol_R_active</span>
@@ -8593,9 +8631,9 @@ dtype: float64</pre>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>np.float64(0.8677991392931751)</pre>
+<pre>np.float64(0.8677991130482158)</pre>
 </div>
 </div>
 </div>
